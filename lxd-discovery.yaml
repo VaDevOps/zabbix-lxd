@@ -1,0 +1,63 @@
+zabbix_export:
+  version: '6.2'
+  date: '2022-12-20T07:30:12Z'
+  template_groups:
+    -
+      uuid: 7a909801c7ad4db197109ef6ad624e6f
+      name: my
+  templates:
+    -
+      uuid: 70d3c935d117498c9c845d32a0732c21
+      template: 'lxd info'
+      name: 'lxd info'
+      groups:
+        -
+          name: my
+      discovery_rules:
+        -
+          uuid: e0b996e0fea14d9f861736ad901dbeaa
+          name: Containers
+          key: lxd.discovery
+          item_prototypes:
+            -
+              uuid: 4b7efbc7c4a34d85b554f43598090b11
+              name: '[{#LXDNAME}]:  CPU in seconds'
+              key: 'lxd.cpu.sec[{#LXDNAME}]'
+              trends: '0'
+              value_type: TEXT
+            -
+              uuid: aad8ddbbf27347399dbae0f28c60235c
+              name: '[{#LXDNAME}]: info'
+              key: 'lxd.info[{#LXDNAME}]'
+              trends: '0'
+              value_type: TEXT
+            -
+              uuid: ff95e1bf6c444e4a8905d23cd63f89b8
+              name: '[{#LXDNAME}]: memory current'
+              key: 'lxd.memory.current[{#LXDNAME}]'
+              trends: '0'
+              value_type: TEXT
+            -
+              uuid: 792af376077b4c5e83ddd5ab5282ada0
+              name: '[{#LXDNAME}]: memory max'
+              key: 'lxd.memory.peak[{#LXDNAME}]'
+              trends: '0'
+              value_type: TEXT
+        -
+          uuid: fa77989163904e95b5778dbc6d71fdee
+          name: Storage
+          key: storage.discovery
+          item_prototypes:
+            -
+              uuid: 2c832d9d7af8409f8753c9b0f2959545
+              name: '[{#STORAGE}]: storage'
+              key: 'storage.info[{#STORAGE}]'
+              trends: '0'
+              value_type: TEXT
+      macros:
+        -
+          macro: '{$LXDNAME}'
+          value: ^(masa|sui|)$
+        -
+          macro: '{$RUNLXDNAME}'
+          value: ^(masa|sui|)$
