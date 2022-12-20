@@ -19,8 +19,8 @@ This template was tested on:
 
 ## Discovery rules
 
-'sudo lxc ls volatile.last_state.power=RUNNING -f json' = Returns only Running containers
-'sudo lxc ls -f json' = Returns All containers
+- 'sudo lxc ls volatile.last_state.power=RUNNING -f json' = Returns only Running containers
+- 'sudo lxc ls -f json' = Returns All containers
 
 
 ## Contributions
