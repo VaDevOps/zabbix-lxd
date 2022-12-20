@@ -14,7 +14,7 @@ This template was tested on:
 
 ## Setup
 
-- `cp discovery.conf /etc/zabbix/zabbix_agentd.d/`
+- `cp Lxd.conf /etc/zabbix/zabbix_agentd.d/`
 - `import Template`
 
 ## Discovery rules
