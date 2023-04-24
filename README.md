@@ -1,6 +1,6 @@
 # Zabbix-LXD
 
-## Overwiew
+## Overview
 
 For Zabbix version: 6.2 and higher  
 The template to monitor LXD engine by Zabbix.
